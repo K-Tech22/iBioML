@@ -1,0 +1,44 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set font and background color for header */
+header {
+    background-color: #4B2E83;
+    color: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style for the university name */
+header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Style for the navigation bar */
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+header nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+header nav ul li a:hover {
+    color: #FDCD58;
+    text-decoration: underline;
+}
