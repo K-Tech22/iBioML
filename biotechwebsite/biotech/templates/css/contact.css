@@ -16,6 +16,7 @@ header {
 
 /* Style for the university name */
 header h1 {
+    font-family: sans-serif, "consolas";
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -33,6 +34,7 @@ header nav ul li {
 }
 
 header nav ul li a {
+    font-family: sans-serif, "consolas";
     color: #FFFFFF;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
