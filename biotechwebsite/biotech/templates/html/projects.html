@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <title>First Navigation Bar</title>
+  <title>iBioML | UWB Projects</title>
   <style>
       /* First navigation bar */
       @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitter&family=Encode+Sans+Condensed:wght@100;200;300&family=Julee&family=Kanit:wght@900&family=Open+Sans&family=Roboto+Condensed:wght@300&family=Roboto+Mono:wght@300&family=Roboto:wght@100&display=swap');
@@ -14,7 +14,7 @@
           margin: 0;
           padding: 0;
       }
-    /*
+    
       body::before {
           content: "";
           position: fixed;
@@ -22,13 +22,13 @@
           left: 0;
           width: 100%;
           height: 100%;
-          background-image: url("https://www.washington.edu/static/home/wp-content/themes/boundless/assets/images/quad.jpg");
+          background-image: url("../images/StockSnap_gene.jpg");
           background-size: cover;
           background-repeat: no-repeat;
           z-index: -1;
-          opacity: 0.5;
+          opacity: 0.105;
       }
-      */
+      
 
       .navbar {
           margin-top: 0;
@@ -238,7 +238,9 @@
    <div class="navbar">
     <div>
         <!-- <img src="../templates/images/w-logo-sprite.png" class="wlogo"> -->
-        <img src="../images/w-logo-sprite.png" class="wlogo">
+        <div class="image-transition">
+          <a href="http://faculty.washington.edu/kimw6"></a>
+        </div>
         <img src="../images/BrandLogoHeader-UWB-white.png" class="uwblogo">
     </div>
     <div class="right">
@@ -266,15 +268,15 @@
             <li class="menus-item"><a href="#">RESEARCH</a>
                 <i class="fa fa-arrow-down"></i>
                 <ul class="dropdown">
-                    <li><a href="">Projects</a></li>
+                    <li><a href="../html/projects.html">Projects</a></li>
                 </ul>
             </li>
 
             <li class="menus-item"><a href="#">PEOPLE</a></i>
                 <i class="fa fa-arrow-down"></i>
                 <ul class="dropdown">
-                    <li><a href="html/core-faculty.html">Core Faculty</a></li>
-                    <li><a href="html/people-collaborator.html">Collaborator</a></li>
+                    <li><a href="../html/core-faculty.html">Core Faculty</a></li>
+                    <li><a href="../html/people-collaborator.html">Collaborator</a></li>
                 </ul>
             </li>
 
@@ -290,7 +292,7 @@
     <!-- introduction -->
     <section id="intro">
       <br><br>
-      <h2>Welcome to Bioinformatics Research</h2>
+      <h2>Research Focus</h2>
       <p>Our research is dedicated to tackling complex challenges in biology. Our diverse community of researchers and students work together to advance knowledge in the life sciences, using cutting-edge computational and statistical methods to explore biological data. Our mission is to uncover the mysteries of biological systems and provide insights for personalized medicine.</p>
       <p>Research Interests:
         <ul id = "fields">
@@ -325,8 +327,8 @@
       </ul>
 
       <br>
-      <p>If you are interested in any of our research, please contact us for more information.</p>
-      <p>Contact: xyz[at]uw.edu</p>
+      <p><b>If you are interested in any of our research, please contact us for more information:</b></p>
+      <p> xyz [ a t ] uw.edu</p>
       <br><br>
     </section>
     <!-- End Of: Student Opportunities-->
@@ -533,7 +535,7 @@
             <p>[Insert News]</p>
           </li>
         </ul>
-        <br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </section>
       <!--   End Of: Achievements and media coverage      -->
 
@@ -543,16 +545,22 @@
     <footer>
       <div class="footer-content">
         <img class="move-right" src="../images/BrandLogoHeader-UWB-white.png" alt="logo">
-        <ul class="socials">
-          <li><a href="https://www.facebook.com/uwbothell"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="https://twitter.com/UWBothell"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="https://www.linkedin.com/school/university-of-washington-bothell/"><i class="fa fa-linkedin"></i></a></li>
-          <li><a href="https://www.youtube.com/user/uwbothell"><i class="fa fa-youtube"></i></a></li>
-          <li><a href="https://www.instagram.com/uw_bothell/"><i class="fa fa-instagram"></i></a></li>
-        </ul>
+        <br><br>
+        <div class="foot-border">
+          <p>Connect with us:</p>
+          <ul class="socials">
+            <li><a href="https://www.facebook.com/uwbothell"><i class="fab fa-facebook-square"></i></a></li>
+            <li><a href="https://twitter.com/UWBothell"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/school/university-of-washington-bothell/"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://www.youtube.com/user/uwbothell"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://www.instagram.com/uw_bothell/"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <br><br><br>
         <div class="footer-bottom">
             <p>&copy; Universiy of Washington | Bothell, WA</p>
         </div>
+      
       </div>
     </footer>
 

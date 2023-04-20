@@ -1,185 +1,239 @@
 body {
-    font-family: "Encode Sans Compressed", sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #fcfcfc;
-    /* margin-left: 30%; */
-    /*box-sizing: border-box; */
-  }
-  
-  body p {
-            margin-top: 2%;
-    }
+  font-family: "Encode Sans Compressed", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fcfcfc;
+  /* margin-left: 30%; */
+  /*box-sizing: border-box; */
+}
 
-  i {
-            color: #4b2e83;
+body p {
+          margin-top: 2%;
   }
-  
-  p {
-            margin-left: 0;
-            font-family: "Encode Sans Compressed", sans-serif;
-           /* font-size: 16px; */
-    }
+
+i {
+          color: #4b2e83;
+}
+
+p {
+          margin-left: 0;
+          font-family: "Encode Sans Compressed", sans-serif;
+         /* font-size: 16px; */
+  }
 
 
-  h1 {
-        margin-top: 5%;
-        font-size: 24px;
-        color: #4b2e83;
-        margin-bottom: 20px;
-        margin-left: 20%;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav li {
+h1 {
+      margin-top: 5%;
+      font-size: 24px;
+      color: #4b2e83;
+      margin-bottom: 20px;
+      margin-left: 20%;
+}
+
+.navbar {
+  margin-top: 0;
+  background-color: #4b2e83;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  justify-content: space-between;
+}
+
+.image-transition{
+    width: 123px;
+    height: 91px;
+    background-image: url('../images/w-logo-sprite.png');
     display: inline-block;
-    margin-right: 20px;
-  }
-  
-  nav li:last-child {
-    margin-right: 0;
-  }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h2 {
-    font-size: 24px;
-    color: #4b2e83;
-    margin-top: 0;
-  }
-  
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    
-  }
-  
-  li {
-    margin-bottom: 20px;
-  }
-
-  #positions{
-    list-style-type: square;
-    margin-bottom: 20px;
-    padding-left: 5%;
-  }
-
-  #fields{
-    list-style-type: square;
-    margin-bottom: 20px;
-    padding-left: 5%;
-  }
-
-  #projects{
-    list-style-type: square;
-    margin-bottom: 20px;
-    padding-left: 5%;
-  }
- 
-  #award_head{
-    list-style-type: disc;
-    margin-bottom: 20px;
-    padding-left: 5%;
-  }
-  #award_sub{
-    list-style-type: circle;
-    margin-bottom: 20px;
-    padding-left: 5%;
-  }
-  
-  h3 {
-    color: #5500ff;
-    margin-top: 0;
-  }
-  
-  /* Hyperlinks */
-  a {
-    color: #333;
-  }
-  
-
-
-  footer {
+    margin-left: 200px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: background-image 0.3s ease;
+    justify-content: space-between;
     position: relative;
-    background: url(../images/footer.jpg);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #4b2e83;
-    height: auto;
-    font-family: "Open Sans";  
-    color: #fff;
-  }
-  footer img {
-    margin-left: 2%;
-  }
+    cursor: pointer;
+}
 
-  .footer-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+.image-transition:hover {
+  width: 123px;
+  height: 94px;
+  background-image: url('../images/w-logo-sprite\ \(gold\).png');
+}
+
+.image-transition a {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image-transition:hover a {
+  display: block;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #4b2e83;
+  margin-top: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+#positions{
+  list-style-type: square;
+  margin-bottom: 20px;
+  padding-left: 5%;
+}
+
+#fields{
+  list-style-type: square;
+  margin-bottom: 20px;
+  padding-left: 5%;
+}
+
+#projects{
+  list-style-type: square;
+  margin-bottom: 20px;
+  padding-left: 5%;
+}
+
+#award_head{
+  list-style-type: disc;
+  margin-bottom: 20px;
+  padding-left: 5%;
+}
+#award_sub{
+  list-style-type: circle;
+  margin-bottom: 20px;
+  padding-left: 5%;
+}
+
+h3 {
+  color: #5500ff;
+  margin-top: 0;
+}
+
+/* Hyperlinks */
+a {
+  color: #333;
+}
+
+
+
+footer {
+  position: relative;
+  background: url(../images/foot1.png);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #4b2e83;
+  height: auto;
+  min-height: 400px;
+  padding-top: 40px;
+  font-family: "Open Sans";  
+  color: #fff;
+}
+footer img {
+  margin-left: 2%;
+}
+
+.footer-content {
+  font-family: "Encode Sans Compressed", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 20px;
+}
+
+.foot-border{
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-radius: 10%;
 }
 
 .footer-content h3{
-    font-size: 1.8rem;
-    font-weight: 400;
-    text-transform: capitalize;
-    line-height: 3rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 3rem;
 }
 
 .socials {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0 3rem 0;
-    text-align: center;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 1rem 0;
+  text-align: center;
+  
 }
 
 .socials li{
-    margin: 0 10px;
+  margin: 0 25px;
 }
 
 .socials a{
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 
 }
 
 .socials a i{
-    font-size: 1.1rem;
-    transition: color .4s ease;
+  font-size: 3rem;
+  transition: color .4s ease;
+  color: #ffffff;
 }
 
 .socials a:hover i{
-    color: rgb(225, 0, 255);
+  color: goldenrod;
 }
 
 .footer-bottom p{
-    font-size: 14px;
-    word-spacing: 2px;
-    text-transform: capitalize;
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
 }
 
 .footer-bottom span{
-    text-transform: uppercase;
-    opacity: 0.4;
-    font-weight: 200;
+  text-transform: uppercase;
+  opacity: 0.4;
+  font-weight: 200;
 }
