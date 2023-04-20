@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>First Navigation Bar</title>
+  <style>
+      /* First navigation bar */
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitter&family=Encode+Sans+Condensed:wght@100;200;300&family=Julee&family=Kanit:wght@900&family=Open+Sans&family=Roboto+Condensed:wght@300&family=Roboto+Mono:wght@300&family=Roboto:wght@100&display=swap');
+
+      body {
+          margin: 0;
+          padding: 0;
+      }
+    /*
+      body::before {
+          content: "";
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url("https://www.washington.edu/static/home/wp-content/themes/boundless/assets/images/quad.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          z-index: -1;
+          opacity: 0.5;
+      }
+      */
+
+      .navbar {
+          margin-top: 0;
+          background-color: #4b2e83;
+          display: flex;
+          align-items: center;
+          height: 90px;
+          padding: 10px;
+          justify-content: space-between;
+      }
+
+      .navbar .wlogo {
+          /* height: 50px; */
+          margin-left: 200px;
+          margin-right: 10px;
+          margin-bottom: 10px;
+      }
+
+      .navbar .uwblogo {
+          /* vertical-align: middle; */
+          /* margin-bottom: 20px; */
+          padding-bottom: 20px;
+      }
+
+      .navbar a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 16px;
+          padding: 10px;
+      }
+
+      .navbar .right {
+          display: flex;
+          align-items: center;
+      }
+
+      .navbar .search-icon {
+          color: #fff;
+          font-size: 24px;
+          margin-left: 10px;
+      }
+
+      .circle {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          background-color: rgba(204, 204, 204, 0);
+          height: 50px;
+          width: 50px;
+          border: 3px solid #ccc;
+          margin-right: 20px;
+      }
+
+      .circle i {
+          font-size: 25px;
+          color: white;
+          /* font-weight: 100; */
+      }
+
+      .circle i:hover {
+          color: #a18132;
+          /* border: 3px solid #a18132; */
+      }
+
+      .circle :hover {
+          border-color: #a18132;
+      }
+
+      .navbar a {
+          margin-right: 200px;
+          font-family: "Encode Sans Compressed", sans-serif;
+          color: #fff;
+          font-size: 20px;
+          font-weight: 600;
+          position: relative;
+          float: right;
+          padding: 8px 25px 10px 0;
+          letter-spacing: .01em;
+      }
+
+      .navbar a:hover {
+          color: #a18132;
+      }
+
+      /* Second navigation bar */
+
+      #main-menus {
+          color: #4b2e83;
+          background-color: #fff;
+          width: 100%;
+          padding: 0;
+
+      }
+
+      .menus-containers {
+          max-width: 1140px;
+          max-height: 80px;
+          margin: 0 auto;
+          padding-left: 35px;
+          border-bottom: 1px solid rgb(224, 224, 224);
+      }
+
+      .menus-nav {
+          list-style-type: none;
+          margin: 0;
+          margin-left: -18%;
+
+      }
+
+      .menus-nav a {
+          color: #4b2e83;
+          text-decoration: none;
+          font-weight: 600;
+          text-transform: uppercase;
+          font-size: 17.65px;
+          background-color: transparent;
+          font-family: "Encode Sans Compressed", sans-serif;
+      }
+
+      .menus-item {
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+          text-align: left;
+          padding: 1.4rem 2rem 1.4rem 0.6rem;
+          padding: 30px;
+      }
+
+      /* .menus-item::after {
+          content: "\f107";
+          margin-left: 10px;
+          font-family: "FontAwesome";
+          position: absolute;
+          color: #4b2e83;
+          font-weight: bold;
+      } */
+
+      .menus-item:not(:first-child)::before {
+          content: " / ";
+          position: absolute;
+          left: -10px;
+          padding-left: 5px;
+      }
+
+      .dropdown {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 1;
+          display: none;
+          border-top: 0.2rem solid #4b2e83;
+      }
+
+      .menus-item:hover .dropdown {
+          display: block;
+          background-color: #fff;
+          border-radius: 5px;
+          list-style: none;
+          padding: 10px;
+      }
+
+      .menus-item:hover .dropdown a {
+          color: rgb(175, 175, 175);
+          font-weight: 400;
+          font-size: 14px;
+      }
+
+      .menus-item:hover .dropdown:hover a:hover {
+          color: #85754d;
+      }
+
+      .menus-item:hover .dropdown a:hover {
+          /* background-color: #6e68681a;
+          transition: all 0.3s ease; */
+          color: #4b2e83;
+      }
+
+      .dropdown li {
+          padding: 10px;
+          border-bottom: 1px solid rgba(128, 128, 128, 0.13);
+      }
+
+      .dropdown a {
+          display: block;
+          text-decoration: none;
+          font-weight: bold;
+          padding: 5px;
+      }
+
+      .menus-item:hover a {
+          color: #85754d;
+      }
+
+      .menus-containers .menus-nav .menus-item i {
+          margin-left: 10px;
+          color: #4b2e83;
+      }
+  </style>
+</head>
+<body>
+
+
+
+  <header>
+   <!-- First navigation bar -->
+   <div class="navbar">
+    <div>
+        <!-- <img src="../templates/images/w-logo-sprite.png" class="wlogo"> -->
+        <img src="../images/w-logo-sprite.png" class="wlogo">
+        <img src="../images/BrandLogoHeader-UWB-white.png" class="uwblogo">
+    </div>
+    <div class="right">
+        <div class="circle">
+            <i class="fa fa-search"></i>
+        </div>
+        <a href="#">Login</a>
+        <!-- <i class='bx bx-search search-icon'></i> -->
+    </div>
+</div>
+
+<nav class="main-menus" id="main-menus">
+    <div class="menus-containers">
+        <ul class="menus-nav">
+            <li class="menus-item"><a href="#">ABOUT</a>
+                <i class="fa fa-arrow-down"></i>
+
+
+                <ul class="dropdown">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Direction</a></li>
+                    <li><a href="#">Mission</a></li>
+                </ul>
+            </li>
+            <li class="menus-item"><a href="#">RESEARCH</a>
+                <i class="fa fa-arrow-down"></i>
+                <ul class="dropdown">
+                    <li><a href="">Projects</a></li>
+                </ul>
+            </li>
+
+            <li class="menus-item"><a href="#">PEOPLE</a></i>
+                <i class="fa fa-arrow-down"></i>
+                <ul class="dropdown">
+                    <li><a href="html/core-faculty.html">Core Faculty</a></li>
+                    <li><a href="html/people-collaborator.html">Collaborator</a></li>
+                </ul>
+            </li>
+
+            </li>
+        </ul>
+    </div>
+</nav>
+  </header>
+
+
+  <main>
+    <link rel="stylesheet" href="../css/projects.css">
+    <!-- introduction -->
+    <section id="intro">
+      <br><br>
+      <h2>Welcome to Bioinformatics Research</h2>
+      <p>Our research is dedicated to tackling complex challenges in biology. Our diverse community of researchers and students work together to advance knowledge in the life sciences, using cutting-edge computational and statistical methods to explore biological data. Our mission is to uncover the mysteries of biological systems and provide insights for personalized medicine.</p>
+      <p>Research Interests:
+        <ul id = "fields">
+          <li>Pattern Recognition and Data Mining</li>
+          <li>Machine Learning and Numerical Analysis</li>
+          <li>Genome Sequencing Analysis</li>
+          <li>Visualized Medical Data Analysis</li>
+      </p>
+      <br>
+    </section>
+    <!-- End Of: introduction -->
+
+    <!-- Student Opportunities-->
+    <section id = "opportuniies">
+      <h2>Student Opportunities in Research</h2>
+      <p>Our research offers a variety of opportunities for students to engage in research and gain valuable experience in their field of study. We provide students with hands-on experience to help them develop critical thinking and problem problem-solving skills. Students work alongside experienced researchers and faculty members to conduct research in a variety of fields, including:</p>
+        <ul id = "fields">
+        <li>Computer Science</li>
+        <li>Biological Science</li>
+        <li>Environmental Science</li>
+        <li>Statistics</li>
+        <li>Mathematics</li>
+      </ul>
+      <br>
+
+      <p>Current Research Projects:</p>
+      <ul id = "projects">
+        <li>Network Motif Analysis</li>
+        <li>Evolutionary dynamics through genome sequencing analysis</li>
+        <li>VIA-QMI: A software program for immunotherapy research</li>
+        <li>Heart and Soul Study</li>
+      </ul>
+
+      <br>
+      <p>If you are interested in any of our research, please contact us for more information.</p>
+      <p>Contact: xyz[at]uw.edu</p>
+      <br><br>
+    </section>
+    <!-- End Of: Student Opportunities-->
+
+    <!--    Research Projects     -->
+    <section id="focus-areas">
+      <h2>Current Research Projects</h2>
+      <ul>
+        <li>
+          <h3>Network Motif Analysis</h3>
+          <p>Network motif is a frequent and unique subgraph pattern that can be found in biological networks shown in the left. Network motifs have been applied to find breast-cancer related genes, predict essential proteins, and generate protein interactions. Methods to detect network motifs are categorized into network-based and motif-based approaches. Network-based aproach searches all possible patterns from the input graph, while motif-based approach finds the instances of given query patterns. <a href="http://theinf1.informatik.uni-jena.de/motifs/">Fanmod</a> program implements network-based, and <a href="https://www.ncbi.nlm.nih.gov/pubmed/20154426">Moda</a> implements motif-based approach.</p>
+          <p>Examples of network motifs are shown below. Out of all non-isomorphic size-4 graph patterns, shown in the upper right, the method can identify frequent and unique patterns (three patterns as in the bottom), and determine those are the network motifs.
+            Network motif detection process is computationally expensive, and most of programs provide the patterns only without related their instances. We defined a new network motif representation called NemoProfile, which can map pattern to their instances.</p>
+          <p>We developed network motif libraries (NemoLib) in C++, Java and Python, that have NemoProfile functionality. Also we improved the performance of MODA program, which is named as NemoMap. Students have developed web-based network motif detection program using NemoLib.</p>
+          <br><br>
+          <!-- Insert Images-->
+          <div style="display: flex;">
+            <figure style="position: relative;">
+              <img src="http://faculty.washington.edu/kimw6/images/bioNetwork.png" alt="Figure 1: Biological Networks" width="300" height="200">
+              <figcaption style="font-style: italic; position: absolute; bottom: 15;">Figure 1: Biological Networks</figcaption>
+            </figure>
+            <figure style="position: relative;">
+              <img src="http://faculty.washington.edu/kimw6/images/Motif.png" alt="Figure 2: Network Motif Detection" width="300" height="200">
+              <figcaption style="font-style: italic; position: absolute; bottom: 15;">Figure 2: Network Motif Detection</figcaption>
+            </figure>  
+          </div>
+          <br><br><br>
+          <p> <a href="https://bioresearch.uwb.edu/biores/NemoSuite/">NemoSuite</a>: Web-based Network Motif Analytic Suite</p>
+          <p>Download NemoLib: <a href="https://github.com/Kimw6/NemoLibC">C++</a>, <a href="https://github.com/Kimw6/NemoLib-Java">Java</a>, <a href="https://github.com/Kimw6/NemoLib-Python">Python</a></p>
+          <p>Download <a href="https://github.com/Kimw6/NemoMap">NemoMap</a></p>
+          <p>Example network file: <a href="http://faculty.washington.edu/kimw6/images/bestTest.txt">smallnetwork</a>, <a href="http://faculty.washington.edu/kimw6/images/Y2k.txt">bignetwork</a></p>
+          <br>
+          <p>Research partners/collaborators: <a href="http://faculty.washington.edu/kimw6">Dr. Wooyoung Kim</a></p>
+          <p>Funding sources: [Source 1], [Source 2], [Source 3]</p>
+          <p>Potential opportunities for student involvement: [List what contribution still is unmet]</p>
+          <br>
+        </li>
+
+        <li>
+          <h3>Evolutionary dynamics through genome sequencing analysis</h3>
+          <p>We are collaborating with Dr. Kristina Hillesland on Investigating evolution of a microbial mutualism. Sequencing DNA results in many small chunks of DNA strands, which are called reads that combine to make the whole genome. In general, reconstructing the whole DNA sequence from these reads is done in a series of processes including genome alignment, variant calling, and annotation.</p>
+          <p>We got initial results on list of mutations by the Breseq program. They are available as mutation tables and in a database with muller diagrams (password-protected for now). We are running mutliple tools to detect reliable mutations, and developing an algorithm for detecting structural variants.</p>
+          <br><br>
+          <!-- Insert Images-->
+          <div style="text-align: center;">
+            <img src="http://faculty.washington.edu/kimw6/images/database.png" alt="Figure 3: Web-based Database System">
+            <figcaption style="font-style: italic;">Figure 3: Web-based Database System</figcaption>
+          </div>
+          <br><br>
+          <p>Research partners/collaborators: <a href="http://faculty.washington.edu/kimw6">Dr. Wooyoung Kim</a>, <a href="https://sites.google.com/a/uw.edu/hillesland-lab/">Dr. Kristina Hillesland</a></p>
+          <p>Funding sources: [Source 1], [Source 2], [Source 3]</p>
+          <p>Potential opportunities for student involvement: [List what contribution still is unmet]</p>
+          <br>
+        </li>
+
+        <li>
+          <h3>VIA-QMI: A software program for immunotherapy research</h3>
+          <p>We are collaborating with Dr. Stephen Smith on Immonotherapy research. We are developing VIA-QMI (Visualized data analytic tool for QMI), which is a software program that facilitates the Quantitative Multiplex Co-Immunoprecipitation (QMI) platform. The QMI platform generates high-dimentional data that describe the protein-protein interaction network state of the cell. To maximize the usability, and increase data analytic visualization of the process, VIA-QMI is a graphical user interface program that provides a streamlined workflow and an intuitive and interactive interface.</p>
+          <br><br>
+          <!-- Insert Images-->
+          <div style="text-align: center;">
+          <img src="http://faculty.washington.edu/kimw6/images/QMIassay.png" alt="Figure 4: Description of QMI assay" width="821" height="329">
+          <figcaption style="font-style: italic;">Figure 4: Description of QMI assay</figcaption>
+          </div>
+          <br><br>
+          <p>Research partners/collaborators: <a href="http://faculty.washington.edu/kimw6">Dr. Wooyoung Kim</a>, <a href="https://faculty.washington.edu/seps/SEPS_Lab/The_SEPS_Lab.html">Dr. Stephen Smith</a></p>
+          <p>Funding sources: [Source 1], [Source 2], [Source 3]</p>
+          <p>Potential opportunities for student involvement: [List what contribution still is unmet]</p>
+          <br><br>
+        </li>
+
+        <li>
+          <h3>Heart and Soul Study</h3>
+          <p>We are collaborating with Dr. Chiyoung Lee on the Heart and Soul Study. We are applying interpretable machine learning techniques to gain a deeper insight into the links between mental health and cardiovascular disease. The aim is to build a model based on the set of available biomarkers that provides explainations for predictions, enabling informed decision making when examining the impact of depression on cardiovascular outcomes. Our goal is to allow for the identification of hidden patterns and relationships, faciliating a more comprehensive understanding of the underlying mechanisms behind depression. </p>
+          <p><b>WARNING!:</b> Datasets used in this research are to not be shared outside by any means. This is to protect the privacy and intellectual property of our study patients and to avoid any potential ethical and legal issues.</p>
+          <br><br>
+          <!-- Insert Images-->
+          <p>[Insert Images]</p>
+          <br><br>
+          <p>Research partners/collaborators: <a href="http://faculty.washington.edu/kimw6">Dr. Wooyoung Kim</a>, <a href="https://www.uwb.edu/nhs/people/faculty/clee">Dr. Chiyoung Lee</a></p>
+          <p>Funding sources: [Source 1], [Source 2], [Source 3]</p>
+          <p>Potential opportunities for student involvement: [List what contribution still is unmet]</p>
+          <br><br>
+        </li>
+      </ul>
+    </section>
+    <!-- End Of: Research Projects-->
+
+    <!--   Achievements and media coverage      -->
+    <section id="achievements">
+      <h2>Achievements</h2>
+      <ul>
+        
+        <li>
+          <h3>Awards</h3>
+          <ul id = "award_head"> 
+            <li>Co-PI, Quantitative protein network profiling to improve car design and efficacy, (PI: Dr. Stephen Smith, SEATTLE CHILDREN'S HOSPITAL), National Institutes of Health, support for 5 years:2020-2025, $600,156</li>
+            <li>Research Assistant Support, Computing and Software Systems Division, University of Washington</li>
+            <ul id = "award_sub"> 
+            <li>Exploring interpretable machine learning in identifying adaptive mutations, support for two quarters 2022-2023</li>
+            <li>Patterns in a graph to detect structural variants from genome sequencing reads, support for three quarters 2019-2020</li>
+            <li>Graphical User Interface Program for Quantitative Multiplex Co-Immunoprecipitation, support for two quarters 2018-2019</li>
+            <li>Network Motif in Cloud, support for three quarters 2017-2018</li>
+            <li>Reconstruction of Evolutionary Biological Networks, support for two quarters 2016-2017</li>
+          </ul>
+          <li>Graduate Research Program, Computing and Software Systems Division, University of Washington</li>
+            <ul id = "award_sub"> 
+            <li>Interpretable machine learning techniques to identify adaptive mutations in genomics data, Winter 2022 ($5,000)</li>
+            <li>Pattern-based clustering approach to detecting structural variants from next-generation sequencing data, Winter, Spring, and Summer 2019 ($5,400)</li>
+            <li>Trace mutations in co-evolved organisms with a web-interactive web database system, support for one quarter, Winter 2018 ($3,500)</li>
+            <li>Reconstruction of evolutionary PPI networks, Autumn 2016($5,500), Winter 2017 ($5,500), Spring 2017 ($5,500)</li>
+            <li>Machine Learning in Genomics over clouds, Autumn 2014 ($4,400)</li>
+            <li>Motif discovery in MapReduce, Winter 2014 ($2,196)</li>
+          </ul>
+          <li>PI, Coevolution in-action: Beyond Next Generation Sequencing (NGS) Analysis in Cloud Computing Environments, Microsoft Azure Award, support for one year, 2015, $20,000</li>
+          <li>PI, Coevolution in-action: Next Generation Data Sequencing Analysis in Cloud Computing Platforms, Google Cloud Credit, support for one year: Jul 15, 2014 - Jul 14, 2015, $10,000</li>
+          <li>Co-PI, RUI: Characterization of Coevolution, Adaptation, and Diversification in a Model Microbial Mutualism, (PI: Dr. Kristina Hillesland), National Science Foundation, Division of Environmental Biology, support for 3 years:2013-2016, $400,000</li>
+          </ul>
+        </li>
+        <br>
+        <li>
+          <h3>Journal Publication (Refereed)</h3>
+          
+          <ol >
+            <li><b>W. Kim</b>, Y. Hsu, Z. Li, P. Mar, and Y. Wang <a href="https://astesj.com/v05/i06/p185/">NemoSuite: Web-based Network Motif Analytic Suite</a>, Advances in Science, Technology and Engineering Journal, vol. 5, Issue 6, pp. 1545-1554 (2020)</li>
+            <li>T. Huynh, S. Mbadiwe and <b>W. Kim</b>. <a href="https://astesj.com/v03/i05/p23/">NemoMap: Improved Motif-centric Network Motif Discovery Algorithm</a>, Advances in Science, Technology and Engineering Journal, vol. 3, no. 5, pp. 186-199 (2018)</li>
+            <li><b>W. Kim</b>, L. Haukap, <a href="http://em.rdcu.be/wf/click?upn=KP7O1RED-2BlD0F9LDqGVeSGLG7fu8MBQVpsH073XKUfg-3D_3AatOr2YbqsSLkpNYFhckQBCCKhHvbQd3nLGcPhEhrLfU2pqS1LO8fpigu-2FnPV5fEmIOXOX3AdHa2OOwM2JcTx28mPckadOYMWwMrFXiRMqMBKm5I3rWNrHX5TAepUUes64K6FI4pJD-2B2MmzjHSib-2Fo0e3edkU81wuKFGGPt1bNbFEl-2BJF37HVoiqLSVO8U8a4aR5TaQFsYmGlx4bVDibYSWaDMFmMuhxMG3jM2KoFmKl4Ovcwbd0tNhS0wgmZkPXczZ2P9GJ1vCKa25i3MwnQ-3D-3D">NemoProfile as an efficient approach to network motif analysis with instance collection</a>, BMC Bioinformatics, 18(Suppl12):423, 2017</li>
+            <li>V. Verma, P. Kwon, A. Joglekar, and <b>W. Kim</b>, <a href="http://hipore.com/stcc/2016/IJCC-Vol4-No4-2016c.pdf">Network Motif Analysis in Clouds - Subgraph Enumeration with Iterative Hadoop MapReduce</a>, International Journal of Cloud Computing, Services Transactions on Cloud Computing (STCC), 4(4), 2016, pp. 28-40.</li>
+            <li><b>W. Kim</b>, S. Kurmar, <a href="http://www.sciencedirect.com/science/article/pii/S104620231500153X">Sensible Method for Updating Motif Instances in an Increased Biological Network</a>, Elsevier METHODS, Volume 83, 15 July 2015, pp. 71-79, ISSN 1046-2023, http://dx.doi.org/10.1016/j.ynetg.2015.04.007, 2015</li>
+            <li>B. Chen, M. Kim, M. Johnson, <b>W. Kim</b> and Y. Pan, <a href="http://ijcb.in/ijcb/v1/index.php/ijcb/article/view/16">Protein Local Tertiary Structure Prediction by Super Granule Support Vector Machines with Chou-Fasman Parameter</a>, International Journal of Computational Biology, vol. 1, num. 1, p. 14-27, Apr 2014.</li>
+            <li><b>W. Kim</b>, M. Diko and K. Rawson, <a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6616521">Network Motif Detection: Algorithms, Parallel and Cloud Computing, and Related Tools</a>, Bioinformatics and Computational Biology of Tsinghua Science and Technology Journal, Volume 18, issue 5, pp. 469-489, 2013</li>
+            <li><b>W. Kim</b>, <a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6374366">Prediction of essential proteins using topological properties in GO-pruned PPI network based on machine learning methods</a>, Bioinformatics and Computational Biology of Tsinghua Science and Technology Journal, Volume 17, no:6, pp645-658, Dec. 2012</li>
+            <li><b>W. Kim</b>, M. Li, J. Wang and Y. Pan, <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3287573/">Biological Network Motif Detection and Evaluation</a>, BMC Systems Biology, 5 (Suppl 3), pp. s5, 2011.</li>
+            <li><b>W. Kim</b>, B. Chen, J. Kim Y. Pan , H. Park, <a href="https://www.sciencedirect.com/science/article/pii/S0957417411006609">Sparse Nonnegative Matrix Factorization for ProteinSequence Motif Discovery, Expert Systems with Applications</a>, Volume 38, Issue 10, Pages 13198-13207. ISSN 0957-4174, DOI: 10.1016/j.eswa.2011.04.133, 15 September 2011.</li>
+            <br>
+          </ol>
+
+          <h3>Conference Publication (Refereed)</h3>
+          <ol >
+            <li>K. Sanyour and <b>W. Kim</b>, <a href="https://ieeexplore.ieee.org/abstract/document/9995135?casa_token=RwIm9lUXnMAAAAAA:gerbIHNXbiAatOrG-dsx7f5vX4NXUJiTf4oxZSBWERlDjv3HMoT9hETg3hsgCoiq7hzBTzXq">Machine Learning Algorithms in Gene Editing</a>, 2022 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Las Vegas, Nevada, USA, December 6-8, 2022, pp. 799-802, doi:10.1109/BIBM55620.2022.9995135.</li>
+            <li>Z. Li and <b>W. Kim</b>, <a href="https://dl.acm.org/doi/10.1145/3459930.3469566">Investigating statistical analysis for network motifs, In the 12th ACM Conference on Bioinformatics</a>, Computational Biology, and Health Informatics 2021, Gainesville, Florida, Article No.:40, Pages 1-6</li>
+            <li>Y. Xiao and <b>W. Kim</b>. <a href="https://link.springer.com/chapter/10.1007/978-3-030-57821-3_30">Identification of essential genes with NemoProfile and various machine learning models</a>, 16th International Symposium on Bioinformatics Research and Applications (ISBRA), pp. 319-326. Springer International Publishing, 2020</li>
+            <li><b>W. Kim</b> and Z. A. Brader. <a href="https://link.springer.com/chapter/10.1007/978-3-030-57821-3_31">NemoLib: Network Motif Libraries for network motif detection and analysis</a>, 16th International Symposium on Bioinformatics Research and Applications (ISBRA), pp. 327-334. Springer International Publishing, 2020</li>
+            <li>N. Rohde and <b>W. Kim</b>, <a href="https://ieeexplore.ieee.org/document/8983352">Benchmarking of Structural Variant Detection Tools for Microorganism</a>,2019 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), San Diego, CA, USA, pp. 2005-2012, 2019</li>
+            <li>F. Li, S. Smith, and <b>W. Kim</b>, <a href="https://ieeexplore.ieee.org/abstract/document/8621312">VIA-QMI: A visualized data analytic tool for Quantitative Multiplex Co-Immunoprecipitation(QMI) Platform</a>,2018 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), pp. 2136-2143, Madrid, Spain, 2018</li>
+            <li>S. Mbadiwe and <b>W. Kim</b>. <a href="http://ieeexplore.ieee.org/document/8217920/">ParaMODA: Improving Motif-Centric Subgraph Pattern Search in PPI Networks</a>, IEEE International Conference on Bioinformatics and Biomedicine (BIBM), pp. 1723-1730, Kansas City, MO., 2017</li>
+            <li>A. Andersen and <b>W. Kim</b>. <a href="https://link.springer.com/chapter/10.1007/978-3-319-59575-7_42">NemoLib: A Java Library for Efficient Network Motif Detection</a>, 13th International Symposium on Bioinformatics Research and Applications (ISBRA), Honolulu, HI, USA, May 29 June 2, 2017, Proceedings.Springer International Publishing, pp. 403-407, 2017.</li>
+            <li>A. Andersen, <b>W. Kim</b>, and M. Fukuda, <a href="http://ieeexplore.ieee.org/document/7723748/">MASS-Based NemoProfile Construction for an Efficient Network Motif Search</a>, 2016 IEEE International Conferences on Big Data and Cloud Computing (BDCloud), Social Computing and Networking (SocialCom), Sustainable Computing and Communications (SustainCom) (BDCloud-SocialCom-SustainCom), pp. 601-606. Atlanta, GA, 2016</li>
+            <li>M. Kipps, <b>W. Kim</b>, M. Fukuda, <a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7336254">Agent and Spatial Based Parallelization of Biological Network Motif Search</a>, IEEE High Performance Computing and Communications (HPCC), pp. 786-791, New York, NY, 2015</li>
+            <li>V. Verma, P. Kwon, and <b>W. Kim</b>, <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7214132&punumber=7194474&filter=AND(p_IS_Number%3A7212169)&pageNumber=5"></a>Iterative Hadoop MapReduce-Based Subgraph Enumeration in Network Motif Analysis, in Calton Pu & Ajay Mohindra, ed., IEEE CLOUD, pp. 893-900 , 2015</li>
+            <li><b>W. Kim</b>, S. Kurmar, <a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6999139">Efficient Updates of network motif instances in the extended protein-protein inter action network</a>, In IEEE International Conference on Bioinformatics and Biomedicine, pp. 119-124,2014</li>
+            <li><b>W. Kim</b>, M. Li, J. Wang and Y. Pan, , <a href="http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=6120487">Essential Protein Discovery based on Network Motif and Gene Ontology</a>, IEEE International Conference on Bioinformatics and Biomedicine, pp. 470~475, 2011.</li>
+            <li><b>W. Kim</b> and J.M. Rehg, <a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4724986&isnumber=4724938">Detection of Unnatural Movement Using Epitomic Analysis</a>, in Proc. ICMLA, pp.271-276, 2008</li>
+            <br>
+          </ol>
+
+          <h3>Conference Proceeding - short paper</h3>
+          <ol >
+            <li>A. Singh and <b>W. Kim</b>, <a href="https://ieeexplore.ieee.org/abstract/document/9313392">Detection of Diabetic Blindness with Deep-Learning</a>, The 4th International Workshop on Deep Learning in Bioinformatics, Biomedicine, and Healthcare Informatics (DLB2H 2020), 2020 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Seoul, Korea (South), 2020, pp. 2440-2447, doi: 10.1109/BIBM49941.2020.9313392</li>
+            <li>N. Rohde and <b>W. Kim</b>, <a href="https://isbra.confreg.org/">NemoCluster: Graph Clustering Algorithm Utilizing Higher Order Network Motifs</a>, 16th International Symposium on Bioinformatics Research and Applications (ISBRA), 2020</li>
+            <li><b>W. Kim</b>, and L. Haukap, <a href="https://www.semanticscholar.org/paper/NemoProfile-%3A-Effective-representation-for-network-Kim-Haukap/b6701fb3b487f1a31b10b8b9422de0c3f27e12ce">NemoProfile: effective representation for network motifs and their instances</a>, 12th International Symposium on Bioinformatics Research and Applications (ISBRA), 2016</li>
+            <br>
+          </ol>
+
+          <h3>Poster Publication</h3>
+          <ol >
+            <li>M. Lakic, B. Nega and <b>W. Kim</b>. <a href="https://bioresearch.css.uwb.edu/biores/WebQuateXelero/">Web-QuateXelero: Web-based efficient network motif detection tool</a>, 2020 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), 2020.</li>
+            <li>P. Mar and <b>W. Kim</b>. <a href="https://ieeexplore.ieee.org/document/8983187">NemoMapPy: Motif-centric network motif search on a web</a>, 2019 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), 2019.</li>
+            <li>Y. M. Seah, <b>W. Kim</b>, J. Stopnisek, D. Stahl, K. Hillesland. Elucidating the Selection Dynamics of a Coevolving Microbial Mutualism, The Gordon Research Seminar on Ecological and Evolutionary Genomics, 2019.</li>
+            <li>Hoi Yan Wu, Conard Faraon, Lisa Kim, Sheng Lin, Wai Kwan Shum, Yee Mey Seah, Kristina Hillesland and W. Kim, Web-based Database System to Detect Fluctuating Selection in a Microbial Mutualism, International Conference on Research in Computational Molecular Biology (Recomb) 2019</li>
+            <li><b>W. Kim</b>. A. Andersen, J. Baker, R. Berge, D. Dehaas, and C. Luong. <a href="https://www.iscb.org/cms_addon/conferences/ismb2018/posters.php">NemoLib: Network Motif Library in C++</a>, Java and Python. Intelligent Systems for Molecular Biology 2018.</li>
+            <li>Y. M. Seah, <b>W. Kim</b>, and K. Hillesland. <a href="http://www.zoology.ubc.ca/evo-wibo/">Detecting Fluctuating Selection in a Nascent Microbial Mutualism</a>, Poster presentation in Evo-Bio, 2018.</li>
+            <li>S. Nareddy, E. Westover, K. Hillesland, and <b>W. Kim</b>, <a href="http://dl.acm.org/citation.cfm?id=2660810">Genome Dynamics in Coevolved Genomes: Database Man agement System for Tracing Mutations</a>, In The 5th ACM Conference on Bioinformatics, Computational Biology, and Health Informatics, 2014</li>
+            <li><b>W. Kim</b>, N. Jojic and J. M. Rehg , <a href="http://cs.gsu.edu/~wkim/index_files/PosterMOEP.pdf">Epitomic Analysis of Human Motion</a>, The Learning Workshop @ snowbird, Computational and biological learning society, 2005.</li>
+            <br>
+          </ol>
+
+          <h3>Software Program</h3>
+          <ol >
+            <li>Network Motif Library (Network-based approach)</li>
+            <ul id = "award_sub">
+              <li> NemoLibC++ <a href="https://zenodo.org/badge/latestdoi/173993022">
+                <img src="https://zenodo.org/badge/173993022.svg" alt="DOI: 10.5281/zenodo.2621818">
+              </a>
+              </li>
+              <li> NemoLib Java <a href="https://zenodo.org/badge/latestdoi/173347013">
+                <img src="https://zenodo.org/badge/173347013.svg" alt="DOI: 10.5281/zenodo.2582265">
+              </a>
+              </li>
+              <li> NemoLibC++ <a href="https://zenodo.org/badge/latestdoi/173353235">
+                <img src="https://zenodo.org/badge/173353235.svg" alt="DOI: 10.5281/zenodo.2582249">
+              </a>
+              </li>
+            </ul>
+
+            <li>NemoMap <a href="https://zenodo.org/badge/latestdoi/173359131"><img src="https://zenodo.org/badge/173359131.svg"alt="DOI: 10.5281/zenodo.2582256"></a>  : Improved ParaMODA</li>
+            <li>ParaMODA <a href="https://zenodo.org/badge/latestdoi/173359110"><img src="https://zenodo.org/badge/173359110.svg"alt="DOI: 10.5281/zenodo.2582253"></a>  : Improved <a href="http://compbio.mit.edu/publications/C04_Grochow_RECOMB_07.pdf">Grochow-Kellis'</a> method</li>
+            <br>
+          </ol>
+        </li>
+        <br> 
+        <li>
+            <h3>Media Coverage</h3>
+            <p>[Insert News]</p>
+          </li>
+        </ul>
+        <br><br><br><br>
+      </section>
+      <!--   End Of: Achievements and media coverage      -->
+
+    </main>
+
+
+    <footer>
+      <div class="footer-content">
+        <img class="move-right" src="../images/BrandLogoHeader-UWB-white.png" alt="logo">
+        <ul class="socials">
+          <li><a href="https://www.facebook.com/uwbothell"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://twitter.com/UWBothell"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://www.linkedin.com/school/university-of-washington-bothell/"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://www.youtube.com/user/uwbothell"><i class="fa fa-youtube"></i></a></li>
+          <li><a href="https://www.instagram.com/uw_bothell/"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+        <div class="footer-bottom">
+            <p>&copy; Universiy of Washington | Bothell, WA</p>
+        </div>
+      </div>
+    </footer>
+
+
+  </body>
+  </html>
